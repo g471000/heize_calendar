@@ -8,7 +8,7 @@ function createAnniversaryCard(anniv) {
     var releaseYear = releaseDate.getFullYear();
     var currentYear = today.getFullYear();
 
-    var anniversaryYears = currentYear - releaseYear + 1;
+    var anniversaryYears = currentYear - releaseYear;
 
     var anniversaryDate = new Date(releaseDate);
     if (today < new Date(releaseYear, releaseDate.getMonth(), releaseDate.getDate())) {
@@ -20,25 +20,54 @@ function createAnniversaryCard(anniv) {
     // 남은 날짜 계산
     var remainingDays = getRemainingDays(releaseDate);
 
-    var anniversaryCard = document.createElement("div");
+    // 카드 생성
+    const anniversaryCard = document.createElement("div");
     anniversaryCard.className = "anniversaryList-card";
 
+    // 텍스트 컨테이너 생성
+    var textContainer = document.createElement("div");
+    textContainer.className = "anniversaryList-content";
+    anniversaryCard.appendChild(textContainer);
+
+    // 제목 생성 및 설정
     var anniversaryTitle = document.createElement("div");
     anniversaryTitle.className = "anniversaryList-title";
     anniversaryTitle.textContent = anniv.title;
+    textContainer.appendChild(anniversaryTitle);
+
+    // 남은 날짜 생성 및 설정
+    var remainingDaysText = document.createElement("div");
+    remainingDaysText.className = "remaining-days";
+    if (remainingDays === 0) {
+        remainingDaysText.textContent = "TODAY";
+    } else {
+        remainingDaysText.textContent = "남은 날짜: " + remainingDays + "일";
+    }
+    textContainer.appendChild(remainingDaysText);
 
     var releaseDateText = document.createElement("div");
     releaseDateText.className = "release-date";
     releaseDateText.textContent = "기념일: " + anniv.release_date;
+    textContainer.appendChild(releaseDateText);
 
-    var remainingDaysText = document.createElement("div");
-    remainingDaysText.className = "remaining-days";
-    remainingDaysText.textContent = "남은 날짜: " + remainingDays + "일";
-
+    // 주년 정보 생성 및 설정
     var anniversaryText = document.createElement("div");
     anniversaryText.className = "anniversary";
     if (anniv.show_anniversary !== false) {
-        anniversaryText.textContent = "돌아오는 " + anniversaryYears + "주년";
+        if (remainingDays === 0) {
+            anniversaryText.textContent = anniversaryYears + "주년 축하합니다 ❤";
+        } else {
+            anniversaryText.textContent = "돌아오는 " + anniversaryYears + "주년";
+        }
+    }
+    textContainer.appendChild(anniversaryText)
+
+    // 이미지 생성 및 설정
+    if (anniv.image) {
+        var image = document.createElement("img");
+        image.src = anniv.image;
+        image.className = "anniversaryList-image";
+        anniversaryCard.appendChild(image);
     }
 
     // 남은 날짜에 따라 클래스 할당
