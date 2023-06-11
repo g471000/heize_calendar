@@ -14,14 +14,14 @@
             text-align: center;
         }
 
-        .album-card {
+        .anniversaryList-card {
             border: 1px solid #ccc;
             border-radius: 5px;
             padding: 10px;
             margin-bottom: 10px;
         }
 
-        .album-title {
+        .anniversaryList-title {
             font-size: 18px;
             font-weight: bold;
             margin-bottom: 5px;
@@ -60,89 +60,22 @@
     </style>
 </head>
 <body>
-<h1>Heize 앨범 기념일</h1>
+<h1>Heize Anniversary</h1>
 
 <div class="sort-buttons">
-    <button onclick="sortAlbumsByRemainingDays()">남은 일수로 정렬</button>
-    <button onclick="sortAlbumsByReleaseDate()">발매일로 정렬</button>
+    <button onclick="sortAnniversaryByRemainingDays()">남은 일수로 정렬</button>
+    <button onclick="sortAnniversaryByDate()">기념일 순으로 정렬</button>
 </div>
 
 <div id="albums"></div>
 
 <script src="Windows.js"></script>
-<script src="Albums.js"></script>
-<script src="SortAlbums.js"></script>
+<script src="AnniversaryList.js"></script>
+<script src="SortAnniversary.js"></script>
 <script src="Calculate.js"></script>
 <script>
     initializeWindows(); // Windows 초기화
-    initializeAlbumList(); // 앨범 목록 초기화
+    initializeAnniversaryList(); // 앨범 목록 초기화
 </script>
 </body>
 </html>
-
-<!--<!DOCTYPE html>-->
-<!--<html>-->
-<!--<head>-->
-<!--    <title>Heize 앨범 기념일</title>-->
-<!--    <meta charset="UTF-8">-->
-<!--    <style>-->
-<!--        body {-->
-<!--            font-family: Arial, sans-serif;-->
-<!--            margin: 0;-->
-<!--            padding: 20px;-->
-<!--        }-->
-
-<!--        h1 {-->
-<!--            text-align: center;-->
-<!--        }-->
-
-<!--        .album-card {-->
-<!--            border: 1px solid #ccc;-->
-<!--            border-radius: 5px;-->
-<!--            padding: 10px;-->
-<!--            margin-bottom: 10px;-->
-<!--        }-->
-
-<!--        .album-title {-->
-<!--            font-size: 18px;-->
-<!--            font-weight: bold;-->
-<!--            margin-bottom: 5px;-->
-<!--        }-->
-
-<!--        .remaining-days {-->
-<!--            font-size: 14px;-->
-<!--            color: #555;-->
-<!--        }-->
-
-<!--        .anniversary {-->
-<!--            font-size: 14px;-->
-<!--            color: #999;-->
-<!--        }-->
-
-<!--        .imminent {-->
-<!--            color: pink;-->
-<!--        }-->
-<!--        .very-soon {-->
-<!--            color: #FF1493;-->
-<!--        }-->
-<!--        .soon {-->
-<!--            color: red;-->
-<!--        }-->
-<!--    </style>-->
-<!--</head>-->
-<!--<body>-->
-<!--<h1>Heize 앨범 기념일</h1>-->
-
-
-<!--<div>-->
-<!--    <button onclick="sortAlbumsByRemainingDays()">남은 일수로 정렬</button>-->
-<!--    <button onclick="sortAlbumsByReleaseDate()">발매일로 정렬</button>-->
-<!--</div>-->
-
-<!--<div id="albums"></div>-->
-
-<!--<script src="Albums.js"></script>-->
-<!--<script src="SortAlbums.js"></script>-->
-<!--<script src="Calculate.js"></script>-->
-<!--</body>-->
-<!--</html>-->

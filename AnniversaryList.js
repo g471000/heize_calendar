@@ -1,4 +1,14 @@
-var albums = [
+var anniversaryList = [
+    {
+        title: "생일",
+        release_date: "1991.08.09",
+        show_anniversary: false
+    },
+    {
+        title: "볼륨을 높여요 첫방송",
+        release_date: "2022.08.22",
+        show_anniversary: true
+    },
     {
         "title": "싱글 1집 조금만 더 방황하고",
         "release_date": "2014.01.17"
@@ -74,5 +84,5 @@ var albums = [
     {
         "title": "디지털 싱글 빙글빙글",
         "release_date": "2023.04.05"
-    }
+    },
 ];

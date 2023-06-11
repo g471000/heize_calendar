@@ -1,23 +1,15 @@
+var anniversaryContainer = document.getElementById("anniversaryList");
 
-
-// albums 배열 사용 가능
-var albumsContainer = document.getElementById("albums");
-
-// 오늘 날짜 정보 가져오기
-var today = new Date();
-
-// 앨범 리스트 초기화 함수
-function initializeAlbumList() {
-    albumsContainer.innerHTML = "";
-    albums.forEach(function(album) {
-        var albumCard = createAlbumCard(album);
-        albumsContainer.appendChild(albumCard);
+function initializeAnniversaryList() {
+    anniversaryContainer.innerHTML = "";
+    anniversaryList.forEach(function(anniv) {
+        var annivCard = createAnniversaryCard(anniv);
+        anniversaryContainer.appendChild(annivCard);
     });
 }
 
-// 앨범 카드 생성 함수
-function createAlbumCard(album) {
-    var releaseDate = new Date(album.release_date);
+function createAnniversaryCard(anniv) {
+    var releaseDate = new Date(anniv.release_date);
 
     // 발매년도와 현재년도 비교
     var releaseYear = releaseDate.getFullYear();
@@ -33,28 +25,18 @@ function createAlbumCard(album) {
     }
 
     // 남은 날짜 계산
-    var remainingDays = getRemainingDays(releaseDate)
+    var remainingDays = getRemainingDays(releaseDate);
 
-    // 주년까지 남은 요일 계산
-    var remainingWeekdays = 0;
-    var tempDate = new Date(today);
-    while (tempDate < anniversaryDate) {
-        if (tempDate.getDay() !== 0 && tempDate.getDay() !== 6) {
-            remainingWeekdays++;
-        }
-        tempDate.setDate(tempDate.getDate() + 1);
-    }
+    var anniversaryCard = document.createElement("div");
+    anniversaryCard.className = "anniversaryList-card";
 
-    var albumCard = document.createElement("div");
-    albumCard.className = "album-card";
-
-    var albumTitle = document.createElement("div");
-    albumTitle.className = "album-title";
-    albumTitle.textContent = album.title;
+    var anniversaryTitle = document.createElement("div");
+    anniversaryTitle.className = "anniversaryList-title";
+    anniversaryTitle.textContent = anniv.title;
 
     var releaseDateText = document.createElement("div");
     releaseDateText.className = "release-date";
-    releaseDateText.textContent = "발매일: " + album.release_date;
+    releaseDateText.textContent = "기념일: " + anniv.release_date;
 
     var remainingDaysText = document.createElement("div");
     remainingDaysText.className = "remaining-days";
@@ -73,10 +55,13 @@ function createAlbumCard(album) {
         remainingDaysText.classList.add("soon");
     }
 
-    albumCard.appendChild(albumTitle);
-    albumCard.appendChild(releaseDateText);
-    albumCard.appendChild(remainingDaysText);
-    albumCard.appendChild(anniversaryText);
+    anniversaryCard.appendChild(anniversaryTitle);
+    anniversaryCard.appendChild(releaseDateText);
+    anniversaryCard.appendChild(remainingDaysText);
+    anniversaryCard.appendChild(anniversaryText);
 
-    return albumCard;
+    return anniversaryCard;
 }
+
+// 기념일 리스트 초기화
+initializeAnniversaryList();
