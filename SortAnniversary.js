@@ -1,3 +1,5 @@
+var anniversaryContainer = document.getElementById("anniversaryList");
+
 // 앨범 리스트 초기화 함수
 function initializeAnniversaryList() {
     anniversaryList.sort(function(a, b) {
@@ -16,7 +18,7 @@ function initializeAnniversaryList() {
 
     anniversaryContainer.innerHTML = "";
     anniversaryList.forEach(function(anniv) {
-        var anniversaryCard = createAnniversaryCard(anniv);
+        var anniversaryCard = Calculate.createAnniversaryCard(anniv);
         anniversaryCard.classList.add(anniv.className); // 클래스 추가
         anniversaryContainer.appendChild(anniversaryCard);
     });
