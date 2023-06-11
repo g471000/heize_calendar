@@ -1,5 +1,3 @@
-var anniversaryContainer = document.getElementById("anniversaryList");
-
 function createAnniversaryCard(anniv) {
     var today = new Date();
     var releaseDate = new Date(anniv.release_date);
@@ -62,12 +60,21 @@ function createAnniversaryCard(anniv) {
     }
     textContainer.appendChild(anniversaryText)
 
-    // 이미지 생성 및 설정
-    if (anniv.image) {
-        var image = document.createElement("img");
-        image.src = anniv.image;
-        image.className = "anniversaryList-image";
-        anniversaryCard.appendChild(image);
+    // // 이미지 생성 및 설정
+    // if (anniv.image) {
+    //     var image = document.createElement("img");
+    //     image.src = anniv.image;
+    //     image.className = "anniversaryList-image";
+    //     anniversaryCard.appendChild(image);
+    // }
+
+    // 유투브 링크 생성 및 설정
+
+    var youtubeLink = document.createElement("a");
+    if (anniv.youtube_link) {
+        youtubeLink.href = anniv.youtube_link;
+        youtubeLink.textContent = "YouTube에서 보기";
+        youtubeLink.target = "_blank";
     }
 
     // 남은 날짜에 따라 클래스 할당
@@ -83,6 +90,7 @@ function createAnniversaryCard(anniv) {
     anniversaryCard.appendChild(releaseDateText);
     anniversaryCard.appendChild(remainingDaysText);
     anniversaryCard.appendChild(anniversaryText);
+    anniversaryCard.appendChild(youtubeLink);
 
     return anniversaryCard;
 }
