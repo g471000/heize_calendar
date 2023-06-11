@@ -1,14 +1,7 @@
 var anniversaryContainer = document.getElementById("anniversaryList");
 
-function initializeAnniversaryList() {
-    anniversaryContainer.innerHTML = "";
-    anniversaryList.forEach(function(anniv) {
-        var annivCard = createAnniversaryCard(anniv);
-        anniversaryContainer.appendChild(annivCard);
-    });
-}
-
 function createAnniversaryCard(anniv) {
+    var today = new Date();
     var releaseDate = new Date(anniv.release_date);
 
     // 발매년도와 현재년도 비교
@@ -44,7 +37,9 @@ function createAnniversaryCard(anniv) {
 
     var anniversaryText = document.createElement("div");
     anniversaryText.className = "anniversary";
-    anniversaryText.textContent = "돌아오는 " + anniversaryYears + "주년";
+    if (anniv.show_anniversary !== false) {
+        anniversaryText.textContent = "돌아오는 " + anniversaryYears + "주년";
+    }
 
     // 남은 날짜에 따라 클래스 할당
     if (remainingDays <= 30) {

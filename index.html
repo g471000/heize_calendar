@@ -3,61 +3,7 @@
 <head>
     <title>Heize 앨범 기념일</title>
     <meta charset="UTF-8">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .anniversaryList-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .anniversaryList-title {
-            font-size: 18px;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .remaining-days {
-            font-size: 14px;
-            color: #555;
-        }
-
-        .anniversary {
-            font-size: 14px;
-            color: #999;
-        }
-
-        .imminent {
-            color: pink;
-        }
-
-        .very-soon {
-            color: #FF1493;
-        }
-
-        .soon {
-            color: red;
-        }
-
-        .sort-buttons {
-            text-align: center;
-            margin-bottom: 10px;
-        }
-
-        .sort-buttons button {
-            margin-right: 5px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <h1>Heize Anniversary</h1>
@@ -67,7 +13,7 @@
     <button onclick="sortAnniversaryByDate()">기념일 순으로 정렬</button>
 </div>
 
-<div id="albums"></div>
+<div id="anniversaryList"></div>
 
 <script src="Windows.js"></script>
 <script src="AnniversaryList.js"></script>

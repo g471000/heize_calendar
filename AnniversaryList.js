@@ -1,13 +1,17 @@
 var anniversaryList = [
     {
-        title: "생일",
+        id: 1,
+        title: "❤️ 다혜 공주님 생일 ❤️",
         release_date: "1991.08.09",
-        show_anniversary: false
+        show_anniversary: false,
+        className: "birthday-card" // 생일 카드에 추가할 클래스
     },
     {
-        title: "볼륨을 높여요 첫방송",
+        id: 2,
+        title: "KBS 볼륨을 높여요",
         release_date: "2022.08.22",
-        show_anniversary: true
+        show_anniversary: true,
+        className: "volumeUp-card" // 볼륨카드에 추가할 클래스
     },
     {
         "title": "싱글 1집 조금만 더 방황하고",
