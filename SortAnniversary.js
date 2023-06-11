@@ -18,7 +18,7 @@ function initializeAnniversaryList() {
 
     anniversaryContainer.innerHTML = "";
     anniversaryList.forEach(function(anniv) {
-        var anniversaryCard = Calculate.createAnniversaryCard(anniv);
+        var anniversaryCard = createAnniversaryCard(anniv);
         anniversaryCard.classList.add(anniv.className); // 클래스 추가
         anniversaryContainer.appendChild(anniversaryCard);
     });

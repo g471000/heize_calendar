@@ -12,25 +12,25 @@ var anniversaryList = [
         release_date: "2022.08.22",
         show_anniversary: true,
         className: "volumeUp-card", // 볼륨카드에 추가할 클래스
-        image: "/images/_02_volume_up.jpg"
+        image: "./images/_02_volume_up.jpg"
     },
     {
         id: 3,
         title: "싱글 1집 조금만 더 방황하고",
         release_date: "2014.01.17",
-        image: "/images/_03_banghwang.jpeg"
+        image: "./images/_03_banghwang.jpeg"
     },
     {
         id: 4,
         title: "미니 1집 HEIZE",
         release_date: "2014.03.21",
-        image: "/images/_04_heize.jpg"
+        image: "./images/_04_heize.jpg"
     },
     {
         id: 5,
         title: "싱글 2집 내 남자친구가 고맙대",
         release_date: "2015.01.16",
-        image: "/images/_05_my_bf.jpeg"
+        image: "./images/_05_my_bf.jpeg"
     },
     {
         title: "싱글 3집 Pume Sweet Pume",
